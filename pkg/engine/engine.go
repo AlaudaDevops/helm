@@ -44,6 +44,8 @@ type Engine struct {
 	clientProvider *ClientProvider
 	// EnableDNS tells the engine to allow DNS lookups when rendering templates
 	EnableDNS bool
+	// CustomFuncMap is a map of custom functions to be used in the templates
+	CustomFuncMap template.FuncMap
 }
 
 // New creates a new instance of Engine using the passed in rest config.
@@ -76,6 +78,11 @@ func New(config *rest.Config) Engine {
 func (e Engine) Render(chrt *chart.Chart, values chartutil.Values) (map[string]string, error) {
 	tmap := allTemplates(chrt, values)
 	return e.render(tmap)
+}
+
+// RegisterCustomFunc add custom function to the engine
+func (e Engine) RegisterCustomFunc(funcName string, fn any) {
+	e.CustomFuncMap[funcName] = fn
 }
 
 // Render takes a chart, optional values, and value overrides, and attempts to
@@ -242,6 +249,14 @@ func (e Engine) initFunMap(t *template.Template) {
 		funcMap["getHostByName"] = func(_ string) string {
 			return ""
 		}
+	}
+
+	for k, v := range e.CustomFuncMap {
+		if _, ok := funcMap[k]; ok {
+			log.Printf("[WARNING] Custom function %s already exists, skipping", k)
+			continue
+		}
+		funcMap[k] = v
 	}
 
 	t.Funcs(funcMap)
