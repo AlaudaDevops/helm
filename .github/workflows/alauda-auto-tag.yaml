@@ -3,7 +3,7 @@ name: Auto Tag for Alauda
 on:
   push:
     branches:
-      - 'alauda-v*'
+      - 'alauda-*'
 
 permissions:
   contents: write  # create tags and releases
