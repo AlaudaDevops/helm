@@ -4,12 +4,13 @@
     "github>AlaudaDevops/renovate-config:base"
   ],
   "baseBranches": [
-    "/^alauda-v.*/"
+    "/^alauda-.*/"
   ],
   "postUpdateOptions": [
     "gomodTidy"
   ],
   "assignees": [
-    "nanjingfm"
+    "nanjingfm",
+    "yuzichen12123"
   ]
 }
