@@ -80,3 +80,9 @@ jobs:
           NEW_TAG="${{ steps.latest.outputs.new_tag }}"
           git tag "$NEW_TAG"
           git push origin "$NEW_TAG"
+  
+
+  release-alauda:
+    name: Release Alauda
+    needs: [tag]
+    uses: ./.github/workflows/reusable-release-alauda.yaml
