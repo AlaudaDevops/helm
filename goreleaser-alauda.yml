@@ -23,7 +23,8 @@ builds:
       - arm64
     ldflags:
       - -w -s -extldflags '-static'
-      - X helm.sh/helm/v3/internal/version.version=v{{.Env.GENERATED_VERSION}}
+      - -X helm.sh/helm/v3/internal/version.version=v{{.Env.GENERATED_VERSION}}
+      - -X helm.sh/helm/v3/internal/version.gitCommit={{.Commit}}
     main: ./cmd/helm/
     binary: alauda-helm
 
