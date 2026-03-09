@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
 
-permissions:  
+permissions:
   contents: read
 
 jobs:
@@ -24,8 +24,17 @@ jobs:
           go-version: '${{ env.GOLANG_VERSION }}'
           check-latest: true
 
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@971e284b6050e8a5849b72094c50ab08da042db8 #pin@6.1.1
-        with:
-          install-mode: goinstall
-          version: ${{ env.GOLANGCI_LINT_VERSION }}
+      - name: Install golangci-lint from source
+        run: |
+          # Build golangci-lint with the same Go toolchain as this workflow,
+          # so it can parse and analyze code from newer Go versions.
+          go install github.com/golangci/golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT_VERSION}
+
+          # Make go-installed tools available to subsequent steps.
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Print golangci-lint version
+        run: golangci-lint version
+
+      - name: Run golangci-lint
+        run: golangci-lint run ./...
