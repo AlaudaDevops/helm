@@ -1,6 +1,6 @@
 module helm.sh/helm/v4
 
-go 1.25.7
+go 1.26.1
 
 require (
 	github.com/AdaLogics/go-fuzz-headers v0.0.0-20230811130428-ced1acdcaa24
