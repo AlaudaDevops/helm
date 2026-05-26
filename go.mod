@@ -3,7 +3,7 @@ module helm.sh/helm/v3
 go 1.26.3
 
 require (
-	github.com/AdaLogics/go-fuzz-headers v0.0.0-20230811130428-ced1acdcaa24
+	github.com/AdaLogics/go-fuzz-headers v0.0.0-20240806141605-e8a1dd7889d6
 	github.com/BurntSushi/toml v1.5.0
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/Masterminds/semver/v3 v3.3.0
@@ -11,8 +11,9 @@ require (
 	github.com/Masterminds/squirrel v1.5.4
 	github.com/Masterminds/vcs v1.13.3
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
-	github.com/containerd/containerd v1.7.29
-	github.com/cyphar/filepath-securejoin v0.4.1
+	github.com/containerd/containerd v1.7.31
+	github.com/containerd/containerd/v2 v2.0.0
+	github.com/cyphar/filepath-securejoin v0.5.1
 	github.com/distribution/distribution/v3 v3.1.1
 	github.com/evanphx/json-patch v5.9.11+incompatible
 	github.com/foxcpp/go-mockdns v1.1.0
@@ -60,9 +61,9 @@ require (
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/chai2010/gettext-go v1.0.2 // indirect
-	github.com/containerd/errdefs v0.3.0 // indirect
+	github.com/containerd/errdefs v1.0.0 // indirect
 	github.com/containerd/log v0.1.0 // indirect
-	github.com/containerd/platforms v0.2.1 // indirect
+	github.com/containerd/platforms v1.0.0-rc.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
