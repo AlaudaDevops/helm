@@ -12,7 +12,6 @@ require (
 	github.com/Masterminds/vcs v1.13.3
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/containerd/containerd v1.7.31
-	github.com/containerd/containerd/v2 v2.0.0
 	github.com/cyphar/filepath-securejoin v0.5.1
 	github.com/distribution/distribution/v3 v3.1.1
 	github.com/evanphx/json-patch v5.9.11+incompatible
@@ -63,7 +62,7 @@ require (
 	github.com/chai2010/gettext-go v1.0.2 // indirect
 	github.com/containerd/errdefs v1.0.0 // indirect
 	github.com/containerd/log v0.1.0 // indirect
-	github.com/containerd/platforms v1.0.0-rc.0 // indirect
+	github.com/containerd/platforms v1.0.0-rc.1 // indirect
 	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
