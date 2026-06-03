@@ -12,7 +12,6 @@ require (
 	github.com/Masterminds/vcs v1.13.3
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/containerd/containerd v1.7.31
-	github.com/containerd/containerd/v2 v2.0.0
 	github.com/cyphar/filepath-securejoin v0.5.1
 	github.com/distribution/distribution/v3 v3.1.1
 	github.com/evanphx/json-patch v5.9.11+incompatible
