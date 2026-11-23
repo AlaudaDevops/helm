@@ -2,6 +2,8 @@ module helm.sh/helm/v3
 
 go 1.26.4
 
+toolchain go1.26.11
+
 require (
 	github.com/AdaLogics/go-fuzz-headers v0.0.0-20240806141605-e8a1dd7889d6
 	github.com/BurntSushi/toml v1.5.0
